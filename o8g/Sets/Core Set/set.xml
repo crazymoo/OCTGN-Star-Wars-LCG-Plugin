@@ -203,7 +203,7 @@
          <property name="Block Number" value="5" />
          <property name="Number" value="0010" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Vehicle_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000170" name="Ancient Monument">
@@ -243,7 +243,7 @@
          <property name="Block Number" value="4" />
          <property name="Number" value="0158" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Vehicle_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000002" name="AT-ST">
@@ -423,7 +423,7 @@
          <property name="Block Number" value="5" />
          <property name="Number" value="0018" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Character_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000076" name="Boba Fett">
@@ -523,7 +523,7 @@
          <property name="Block Number" value="4" />
          <property name="Number" value="0023" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Objective" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000032" name="Control Room">
@@ -702,7 +702,7 @@
          <property name="Block" value="015" />
          <property name="Block Number" value="6" />
          <property name="Number" value="0029" />
-         <property name="Instructions" value="onPlay[Add One Unit Damage Icon|-|Add One Blast Damage Icon|-|Add One Tactics Icon]" />
+         <property name="Instructions" value="" />
          <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
@@ -1023,7 +1023,7 @@
          <property name="Block Number" value="5" />
          <property name="Number" value="0041" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Objective" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000055" name="Detained">
@@ -1383,7 +1383,7 @@
          <property name="Block Number" value="4" />
          <property name="Number" value="0055" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Objective" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000132" name="Fleeing the Empire" size="ObjectiveSize">
@@ -2163,7 +2163,7 @@
          <property name="Block Number" value="5" />
          <property name="Number" value="0137" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Character_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000125" name="ISB Interrogators">
@@ -2343,7 +2343,7 @@
          <property name="Block Number" value="4" />
          <property name="Number" value="0102" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Force User_and_Unit_or_Force Sensitive_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000003" name="Jedi Mind Trick">
@@ -2603,7 +2603,7 @@
          <property name="Block Number" value="4" />
          <property name="Number" value="0093" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Character_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000010" name="Mission Briefing" size="ObjectiveSize">
@@ -3283,7 +3283,7 @@
          <property name="Block Number" value="4" />
          <property name="Number" value="0122" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Force User_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000094" name="Sith">
@@ -3443,7 +3443,7 @@
          <property name="Block Number" value="4" />
          <property name="Number" value="0124" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Objective-byOpponent" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000031" name="Stormtrooper Elite">
@@ -3823,7 +3823,7 @@
          <property name="Block Number" value="5" />
          <property name="Number" value="0141" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Character_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000022" name="The Heart of the Empire" size="ObjectiveSize">
@@ -4103,7 +4103,7 @@
          <property name="Block Number" value="5" />
          <property name="Number" value="0153" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Character_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000067" name="Twi&#39;lek Loyalist">
@@ -4303,7 +4303,7 @@
          <property name="Block Number" value="4" />
          <property name="Number" value="0159" />
          <property name="Instructions" value="" />
-         <property name="AutoScript" value="Placement:Force User_and_Unit_or_Force Sensitive_and_Unit" />
+         <property name="AutoScript" value="" />
          <property name="AutoAction" value="" />
       </card>
       <card id="ff4fb461-8060-457a-9c16-000000000127" name="Vader&#39;s TIE Advanced">

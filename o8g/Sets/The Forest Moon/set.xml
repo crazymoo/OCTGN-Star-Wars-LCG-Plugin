@@ -64,7 +64,7 @@
 			<property name="Number" value="961" />
 			<property name="Instructions" value="" />
 			<property name="AutoScript" value="" />
-			<property name="AutoAction" value="Deal 1 damage to a target unit||Discard 1 card at random from an opponent&#39;s hand||Remove up to 3 damage from a target unit" />
+			<property name="AutoAction" value="" />
 		</card>
 		<card id="ff4fb461-8060-457a-9c16-000000001234" name="Unhinged Astromech">
 			<property name="Cost" value="1" />
@@ -84,7 +84,7 @@
 			<property name="Number" value="961" />
 			<property name="Instructions" value="" />
 			<property name="AutoScript" value="" />
-			<property name="AutoAction" value="Deal 1 damage to a target unit||Discard 1 card at random from an opponent&#39;s hand||Remove up to 3 damage from a target unit" />
+			<property name="AutoAction" value="" />
 		</card>
 		<card id="ff4fb461-8060-457a-9c16-000000001235" name="Signal Scrambler">
 			<property name="Cost" value="1" />

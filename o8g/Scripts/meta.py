@@ -18,12 +18,12 @@
 import re, time
 from collections import defaultdict, namedtuple
 
-Automations = {'Play'    : True, # If True, game will automatically trigger card effects when playing or double-clicking on cards. Requires specific preparation in the sets.
-               'HARDCORE'               : False, # If True, game will not anymore display highlights and announcements on card waiting to trigger.
-               'Triggers'               : True, # If True, game will search the table for triggers based on player's actions, such as installing a card, or discarding one.
-               'WinForms'               : True, # If True, game will use the custom Windows Forms for displaying multiple-choice menus and information pop-ups
-               'Placement'              : True, # If True, game will try to auto-place cards on the table after you paid for them.
-               'Start/End-of-Turn/Phase': True, # If True, game will automatically trigger effects happening at the start of the player's turn, from cards they control.                
+Automations = {'Play'                   : False, # If True, game will automatically trigger card effects when playing or double-clicking on cards. Requires specific preparation in the sets.
+               'HARDCORE'               : True, # If True, game will not anymore display highlights and announcements on card waiting to trigger.
+               'Triggers'               : False, # If True, game will search the table for triggers based on player's actions, such as installing a card, or discarding one.
+               'WinForms'               : False, # If True, game will use the custom Windows Forms for displaying multiple-choice menus and information pop-ups
+               'Placement'              : False, # If True, game will try to auto-place cards on the table after you paid for them.
+               'Start/End-of-Turn/Phase': False, # If True, game will automatically trigger effects happening at the start of the player's turn, from cards they control.                
               }
 
 

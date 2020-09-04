@@ -1,5 +1,9 @@
 Changelog - Star Wars LCG OCTGN Game Definition
 ===============================================
+### 2.43.0.x
+
+The M cycle has been added
+
 ### 2.42.0.x
 
 The Mandalorian cycle has been added

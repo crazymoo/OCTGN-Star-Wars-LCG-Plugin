@@ -11,7 +11,7 @@ your OCTGN opponents.
 https://discordapp.com/invite/0shXbwedwlOcu64k
 
 To report any issues with the plugin, please visit:
-https://github.com/Crazymoo/Star-Wars-LCG-OCTGN/issues
+https://github.com/crazymoo/OCTGN-Star-Wars-LCG-Plugin/issues
 
 =============================
 

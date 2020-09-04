@@ -15,7 +15,8 @@
     # along with this script.  If not, see <http://www.gnu.org/licenses/>.
 
 ###==================================================File Contents==================================================###
-# This file contains the basic table actions in ANR. They are the ones the player calls when they use an action in the menu.
+# This file contains the basic table actions in SW LCG. 
+# They are the ones the player calls when they use an action in the menu.
 # Many of them are also called from the autoscripts.
 ###=================================================================================================================###
 

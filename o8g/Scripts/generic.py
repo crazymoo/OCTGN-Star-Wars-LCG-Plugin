@@ -16,7 +16,7 @@
 
 ###==================================================File Contents==================================================###
 # This file contains generic game-agnostic scripts. They can be ported as-is in any kind of game.
-# * [Generic] funcrion do basic stuff like convert a sting into a number or store your card's properties.
+# * [Generic] funcrion do basic stuff like convert a string into a number or store your card's properties.
 # * [Custom Windows Forms] are functions which create custom-crafted WinForms on the table. The MultipleChoice form is heavily commented.
 # * [Card Placement] Are dealing with placing or figuring where to place cards on the table
 ###=================================================================================================================###
