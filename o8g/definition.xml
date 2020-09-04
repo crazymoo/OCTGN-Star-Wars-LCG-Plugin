@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+      name="Star Wars - The Card Game" 
+      id="d5cf89e5-1984-4873-8ae0-f06eea411bb3" 
+      octgnVersion="3.1.0.0" 
+      version="2.43.0.0"
+      markersize="20"
+      tags="star_wars LCG quick duel"
+      description="In Star Wars: The Card Game, light side and dark side players duel for the fate of the galaxy.
+      &#xD;&#xD;&#xD;While the light side player races to make tactical strikes against dark side objectives, the dark side player works to reinforce their position of command.
+      &#xd;&#xd;Automation rank: C
+      &#xd;(This game definition contains significant automation (in the earlier sets) to allow the game to play faster and with less mistakes. However, older sets are unscripted.)"
+      setsurl="http://octgn.gamersjudgement.com/wordpress/swlcg/sets"
+      gameurl="http://octgn.gamersjudgement.com/wordpress/swlcg/"
+      authors="Db0"
+      scriptVersion="3.1.0.1"
+      iconurl="https://raw.github.com/db0/Star-Wars-LCG-OCTGN/master/box_art.jpg">
+	<scripts>
+      <script src="Scripts/actions.py" />
+      <script src="Scripts/constants.py" />
+      <script src="Scripts/autoscripts.py" />
+      <script src="Scripts/customscripts.py" />
+      <script src="Scripts/generic.py" />
+      <script src="Scripts/meta.py" />
+      <script src="Scripts/sounds.py" />
+      <script src="Scripts/events.py" />
+      <script src="Scripts/CardScripts.py" />
+	</scripts> 
+   <events>
+       <event name="OnTableLoad" action="chkTwoSided" />
+       <event name="OnGameStart" action="resetAll" />
+       <event name="OnLoadDeck" action="loadDeck" />
+       <event name="OnChangeCounter" action="parseNewCounters" />
+       <event name="OnMoveCards" action="checkMovedCards" />
+       <event name="OnScriptedMoveCards" action="checkScriptedMovedCards" />
+   </events>
+   <sounds>
+      <!-- Destroy Sounds -->
+      <sound name="destroy_droid1" src="Sounds/destroy_droid1.mp3"/>
+      <sound name="destroy_droid2" src="Sounds/destroy_droid2.mp3"/>
+      <sound name="destroy_vehicle1" src="Sounds/destroy_vehicle1.mp3"/>
+      <sound name="destroy_vehicle2" src="Sounds/destroy_vehicle2.mp3"/>
+      <sound name="destroy_character1" src="Sounds/destroy_character1.mp3"/>
+      <sound name="destroy_character2" src="Sounds/destroy_character2.mp3"/>
+      <sound name="destroy_character3" src="Sounds/destroy_character3.mp3"/>
+      <sound name="destroy_character4" src="Sounds/destroy_character4.mp3"/>
+      <!-- Thwart Sounds -->
+      <sound name="thwart_objective1" src="Sounds/thwart_objective1.mp3"/>      
+      <sound name="thwart_objective2" src="Sounds/thwart_objective2.mp3"/>      
+      <sound name="thwart_objective3" src="Sounds/thwart_objective3.mp3"/>      
+      <sound name="thwart_objective4" src="Sounds/thwart_objective4.mp3"/>      
+      <!-- Participate Sounds -->
+      <sound name="participate_c3p0" src="Sounds/Specific/participate_c3p0.mp3"/>
+      <sound name="participate_Han_Solo" src="Sounds/Specific/participate_Han_Solo.mp3"/>
+      <sound name="participate_Luke" src="Sounds/Specific/participate_Luke.mp3"/>
+      <sound name="participate_Vader" src="Sounds/Specific/participate_Vader.mp3"/>
+      <sound name="participate_capital_ship1" src="Sounds/participate_capital_ship1.mp3"/>
+      <sound name="participate_character1" src="Sounds/participate_character1.mp3"/>
+      <sound name="participate_character2" src="Sounds/participate_character2.mp3"/>
+      <sound name="participate_character3" src="Sounds/participate_character3.mp3"/>
+      <sound name="participate_creature1" src="Sounds/participate_creature1.mp3"/>
+      <sound name="participate_creature2" src="Sounds/participate_creature2.mp3"/>
+      <sound name="participate_droid1" src="Sounds/participate_droid1.mp3"/>
+      <sound name="participate_droid2" src="Sounds/participate_droid2.mp3"/>
+      <sound name="participate_droid3" src="Sounds/participate_droid3.mp3"/>
+      <sound name="participate_fighter_DS1" src="Sounds/participate_fighter_DS1.mp3"/>
+      <sound name="participate_fighter_DS2" src="Sounds/participate_fighter_DS2.mp3"/>
+      <sound name="participate_fighter_DS3" src="Sounds/participate_fighter_DS3.mp3"/>
+      <sound name="participate_fighter_DS4" src="Sounds/participate_fighter_DS4.mp3"/>
+      <sound name="participate_fighter_LS1" src="Sounds/participate_fighter_LS1.mp3"/>
+      <sound name="participate_fighter_LS2" src="Sounds/participate_fighter_LS2.mp3"/>
+      <sound name="participate_fighter_LS3" src="Sounds/participate_fighter_LS3.mp3"/>
+      <sound name="participate_fighter_LS4" src="Sounds/participate_fighter_LS4.mp3"/>
+      <sound name="participate_force_user1" src="Sounds/participate_force_user1.mp3"/>
+      <sound name="participate_force_user2" src="Sounds/participate_force_user2.mp3"/>
+      <sound name="participate_force_user3" src="Sounds/participate_force_user3.mp3"/>
+      <sound name="participate_transport1" src="Sounds/participate_transport1.mp3"/>
+      <sound name="participate_transport2" src="Sounds/participate_transport2.mp3"/>
+      <sound name="participate_transport3" src="Sounds/participate_transport3.mp3"/>
+      <sound name="participate_trooper1" src="Sounds/participate_trooper1.mp3"/>
+      <sound name="participate_trooper2" src="Sounds/participate_trooper2.mp3"/>
+      <sound name="participate_trooper3" src="Sounds/participate_trooper3.mp3"/>
+      <sound name="participate_trooper4" src="Sounds/participate_trooper4.mp3"/>
+      <sound name="participate_vehicle1" src="Sounds/participate_vehicle1.mp3"/>
+      <sound name="participate_vehicle2" src="Sounds/participate_vehicle2.mp3"/>
+      <sound name="participate_vehicle3" src="Sounds/participate_vehicle3.mp3"/>
+      <sound name="participate_vehicle4" src="Sounds/participate_vehicle4.mp3"/>
+      <!-- Strike Sounds -->
+      <sound name="strike_r2d2" src="Sounds/Specific/strike_r2d2.mp3"/>
+      <sound name="strike_c3p0" src="Sounds/Specific/strike_c3p0.mp3"/>
+      <sound name="strike_capital_ship1" src="Sounds/strike_capital_ship1.mp3"/>
+      <sound name="strike_character1" src="Sounds/strike_character1.mp3"/>
+      <sound name="strike_character2" src="Sounds/strike_character2.mp3"/>
+      <sound name="strike_character3" src="Sounds/strike_character3.mp3"/>
+      <sound name="strike_character4" src="Sounds/strike_character4.mp3"/>
+      <sound name="strike_creature1" src="Sounds/strike_creature1.mp3"/>
+      <sound name="strike_droid1" src="Sounds/strike_droid1.mp3"/>
+      <sound name="strike_droid2" src="Sounds/strike_droid2.mp3"/>
+      <sound name="strike_droid3" src="Sounds/strike_droid3.mp3"/>
+      <sound name="strike_droid4" src="Sounds/strike_droid4.mp3"/>
+      <sound name="strike_fighter_DS1" src="Sounds/strike_fighter_DS1.mp3"/>
+      <sound name="strike_fighter_LS1" src="Sounds/strike_fighter_LS1.mp3"/>
+      <sound name="strike_fighter_LS2" src="Sounds/strike_fighter_LS2.mp3"/>
+      <sound name="strike_force_user1" src="Sounds/strike_force_user1.mp3"/>
+      <sound name="strike_force_user2" src="Sounds/strike_force_user2.mp3"/>
+      <sound name="strike_force_user3" src="Sounds/strike_force_user3.mp3"/>
+      <sound name="strike_force_user4" src="Sounds/strike_force_user4.mp3"/>
+      <sound name="strike_trooper1" src="Sounds/strike_trooper1.mp3"/>
+      <sound name="strike_trooper2" src="Sounds/strike_trooper2.mp3"/>
+      <sound name="strike_vehicle1" src="Sounds/strike_vehicle1.mp3"/>
+      <sound name="strike_vehicle2" src="Sounds/strike_vehicle2.mp3"/>
+      <sound name="strike_vehicle3" src="Sounds/strike_vehicle3.mp3"/>
+      <sound name="strike_vehicle4" src="Sounds/strike_vehicle4.mp3"/>
+      <sound name="strike_wookiee1" src="Sounds/strike_wookiee1.mp3"/>
+      <sound name="strike_wookiee2" src="Sounds/strike_wookiee2.mp3"/>
+      <sound name="strike_wookiee3" src="Sounds/strike_wookiee3.mp3"/>
+      <!-- Shield Sounds -->
+      <sound name="script_shield1" src="Sounds/script_shield1.mp3"/>
+      <!-- Play Unit Sounds -->
+      <sound name="play_Greedo" src="Sounds/Specific/play_Greedo.mp3"/>
+      <sound name="play_Jabba" src="Sounds/Specific/play_Jabba.mp3"/>
+      <sound name="play_Jawa" src="Sounds/Specific/play_Jawa.mp3"/>
+      <sound name="play_R2D2" src="Sounds/Specific/play_R2D2.mp3"/>
+      <sound name="play_Vader" src="Sounds/Specific/play_Vader.mp3"/>
+      <sound name="play_Yoda" src="Sounds/Specific/play_Yoda.mp3"/>
+      <sound name="play_Luke" src="Sounds/Specific/play_Luke.mp3"/>
+      <sound name="play_Obi_Wan" src="Sounds/Specific/play_Obi_Wan.mp3"/>
+      <sound name="play_Leia" src="Sounds/Specific/play_Leia.mp3"/>
+      <sound name="play_Palpatine" src="Sounds/Specific/play_Palpatine.mp3"/>
+      <sound name="play_Han_Solo" src="Sounds/Specific/play_Han_Solo.mp3"/>
+      <sound name="play_c3p0" src="Sounds/Specific/play_c3p0.mp3"/>
+      <sound name="play_falcon" src="Sounds/Specific/play_falcon.mp3"/>
+      <!-- Play Force Event Sounds -->
+      <sound name="play_force_choke" src="Sounds/Specific/play_force_choke.mp3"/>
+      <sound name="play_force_lightning" src="Sounds/Specific/play_force_lightning.mp3"/>
+      <sound name="play_force_control_alter_sense" src="Sounds/play_force_control_alter_sense.mp3"/>
+      <sound name="play_force_control_alter" src="Sounds/play_force_control_alter.mp3"/>
+      <sound name="play_force_control_sense" src="Sounds/play_force_control_sense.mp3"/>
+      <sound name="play_force_sense_alter" src="Sounds/play_force_sense_alter.mp3"/>
+      <sound name="play_force_alter" src="Sounds/play_force_alter.mp3"/>
+      <sound name="play_force_control" src="Sounds/play_force_control.mp3"/>
+      <sound name="play_force_sense" src="Sounds/play_force_sense.mp3"/>
+   </sounds>
+   <markers>
+    <marker src="Markers/c93d4582-16a0-4e2d-9e63-71be20fbfa0c.png" id="c93d4582-16a0-4e2d-9e63-71be20fbfa0c" name="Focus" />
+    <marker src="Markers/8559643f-7a15-4605-937d-0f39d59c9eda.png" id="8559643f-7a15-4605-937d-0f39d59c9eda" name="Shield" />
+    <marker src="Markers/224b865d-173b-49fd-9aed-17df678259b0.png" id="224b865d-173b-49fd-9aed-17df678259b0" name="Damage" />
+    <marker src="Markers/9a5a43b1-c620-4172-93e1-5e71dd2753b7.png" id="9a5a43b1-c620-4172-93e1-5e71dd2753b7" name="Wound" />
+    <marker src="Markers/e00d997f-6e3c-40e0-b0cf-2b25a7c69cfa.png" id="e00d997f-6e3c-40e0-b0cf-2b25a7c69cfa" name="Wound x 3" />
+    <marker src="Markers/2246648d-1581-4be9-9636-1b75129313a6.png" id="2246648d-1581-4be9-9636-1b75129313a6" name="Permanent +1" />
+    <marker src="Markers/987d0d3f-0965-49ae-a96c-03394783d47a.png" id="987d0d3f-0965-49ae-a96c-03394783d47a" name="Temporary +1" />
+    <marker src="Markers/21487438-e108-4f0c-a804-bd2a7f9a1ae5.png" id="21487438-e108-4f0c-a804-bd2a7f9a1ae5" name="Temporary -1" />
+    <marker src="Markers/960e830a-fc0c-46ed-89be-6ac8efb5da8b.png" id="960e830a-fc0c-46ed-89be-6ac8efb5da8b" name="Sith Resource" />
+    <marker src="Markers/28fc888e-527e-453e-b9ba-263d36ea94dd.png" id="28fc888e-527e-453e-b9ba-263d36ea94dd" name="Imperial Navy Resource" />
+    <marker src="Markers/5b96ecac-4570-43f3-81bd-c81be0b4b602.png" id="5b96ecac-4570-43f3-81bd-c81be0b4b602" name="Scum &amp; Villainy Resource" />
+    <marker src="Markers/cd947edc-ae8b-4983-822a-88f8dc6a86f2.png" id="cd947edc-ae8b-4983-822a-88f8dc6a86f2" name="Rebel Alliance Resource" />
+    <marker src="Markers/ee546e3c-de9c-43d1-9ad4-943645644c72.png" id="ee546e3c-de9c-43d1-9ad4-943645644c72" name="Jedi Resource" />
+    <marker src="Markers/bc58905b-1f57-4297-9199-837c85a8ef0d.png" id="bc58905b-1f57-4297-9199-837c85a8ef0d" name="Smugglers &amp; Spies Resource" />
+    <marker src="Markers/fae80b84-88f5-46fe-9806-ed624265757f.png" id="fae80b84-88f5-46fe-9806-ed624265757f" name="Neutral" />
+    <marker src="Markers/6ca2a796-1023-4ccf-9946-2fe4d2252c0c.png" id="6ca2a796-1023-4ccf-9946-2fe4d2252c0c" name="The Edge" />
+    <marker src="Markers/ea7418bc-6847-4e8a-9cc3-0230dc27d19b.png" id="ea7418bc-6847-4e8a-9cc3-0230dc27d19b" name="Activated" />
+    <marker src="Markers/79818747-fe50-4f1e-937b-c71e737bf743.png" id="79818747-fe50-4f1e-937b-c71e737bf743" name="Support" />
+  </markers>
+   <proxygen definitionsrc="Proxy/proxydef.xml">
+   </proxygen>   
+   <documents>
+      <document name="Unofficial Rules Summary" icon="Documents/Manual.png" src="Documents/Star_Wars_Guide_1.3.htm" />
+      <document name="Unofficial Action Window Reference" icon="Documents/Manual.png" src="Documents/UnofficialActionWindowReferenceCard_v1.0.htm" />
+      <document name="Keyboard Shortcus Reference" icon="Documents/Manual.png" src="Documents/Shortcuts.htm" />
+   </documents>    
+   <globalvariables> 
+     <globalvariable name="Balance of the Force" value="" /> 
+     <globalvariable name="Engaged Objective" value="None" />      
+     <globalvariable name="Current Attacker" value="None" />      
+     <globalvariable name="Existing Units" value="{}" />      
+     <globalvariable name="Revealed Edge" value="{}" />      
+     <globalvariable name="Phase" value="Dark:0" /> 
+     <globalvariable name="Engagement Phase" value="0" />      
+     <globalvariable name="Captured Cards" value="{}" />      
+     <globalvariable name="Host Cards" value="{}" />      
+     <globalvariable name="Turn" value="0" />      
+     <globalvariable name="Stored Effects" value="{}" />      
+     <globalvariable name="Cards Leaving Play" value="[]" />      
+     <globalvariable name="gameEnded" value="False" /> 
+     <globalvariable name="gameGUID" value="None" /> 
+     <globalvariable name="League" value="" />
+     <globalvariable name="Game Stats" value="{}" /> 
+   </globalvariables>
+	<card back="Card/back.png" front="Card/front.jpg" width="63" height="88" cornerRadius="2">
+		<property name="Block" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Block Number" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Type" type="String" hidden="False" ignoreText="False" textKind="Enum" />
+		<property name="Side" type="String" hidden="False" ignoreText="False" textKind="Enum" />
+		<property name="Affiliation" type="String" hidden="False" ignoreText="False" textKind="Enum" />
+		<property name="Cost" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Force" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Combat Icons" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Traits" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Edge Priority" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Damage Capacity" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Resources" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Text" type="String" hidden="False" ignoreText="False" textKind="Free" />
+		<property name="Flavor" type="String" hidden="False" ignoreText="True" textKind="Free" />
+		<property name="Instructions" type="String" hidden="False" ignoreText="True" textKind="Free" />
+		<property name="Number" type="String" hidden="False" ignoreText="False" textKind="Free" />
+    <property name="AutoScript" type="String" hidden="True" ignoreText="True" />
+    <property name="AutoAction" type="String" hidden="True" ignoreText="True" />
+	  <size name="BalanceSize" width="60" height="40" cornerRadius="2" back="Card/back.png" front="Card/front.jpg"/>
+	  <size name="MarkerSize" width="60" height="60" cornerRadius="2" back="Card/back.png" front="Card/front.jpg"/>
+	  <size name="ObjectiveSize" width="88" height="63" cornerRadius="2" back="Card/rotatedback.png" front="Card/front.jpg"/>
+	  <size name="MissionSize" width="88" height="63" backWidth="63" backHeight="88" cornerRadius="2" backCornerRadius="2" back="Card/back.png" front="Card/front.jpg"/>	  
+	</card>
+	<table name="Table" visibility="all" width="800" height="450" background="Table/background1.png" backgroundStyle="uniformToFill">
+      <groupactions menu="Game...">
+         <groupaction menu="Set up" default="False" shortcut="Ctrl+Shift+S" execute="gameSetup" />
+         <groupaction menu="Concede" default="False" shortcut="Ctrl+Shift+C" execute="concede" />
+         <groupaction menu="HARDCORE Mode ON/OFF" default="False" execute="switchHardcore" />  
+         <groupaction menu="Switch Unit Placement to Left/Center" default="False" execute="switchUnitLocation" />  
+         <groupaction menu="Switch Sounds ON/OFF (Subscribers only)" default="False" execute="switchSounds" />  
+         <groupaction menu="Disable/Enable Buttons" default="False" execute="switchButtons" />  
+         <groupaction menu="Switch Play Automation ON/OFF" default="False" execute="switchPlayAutomation" />  
+         <groupaction menu="Switch Automatic Triggers ON/OFF" default="False" execute="switchTriggersAutomation" />  
+         <groupaction menu="Switch Start/End-of-Turn/Phase Automation ON/OFF" default="False" execute="switchStartEndAutomation" />  
+         <groupaction menu="Switch Automatic Placement ON/OFF" default="False" execute="switchPlacement" />  
+         <groupaction menu="Switch All Automations ON/OFF" default="False" execute="switchAll" />  
+         <groupaction menu="Switch Custom Forms ON/OFF" default="False" execute="switchWinForms" />  
+         <groupaction menu="Re-Download all card automations" default="False" execute="fetchCardScripts" />
+         <groupaction menu="ReConnect" default="False" shortcut="Ctrl+Shift+Q" execute="reconnectMe" />
+         <groupaction menu="Debug" default="False" shortcut="Ctrl+Shift+D" execute="TrialError" /> 
+<!--         <groupaction menu="Debug PL Pos" default="False" execute="debugPLPos" />   
+         <groupaction menu="Change PL Pos" default="False" shortcut="Ctrl+Shift+P" execute="switchPLPos" />  -->
+      </groupactions>
+<!--		<cardaction menu="DebugTest" default="True" execute="flipcard" /> -->
+<!--		<groupaction menu="SoundTest" Shortcut="Ctrl+S"  execute="soundTest" /> -->
+		<cardaction menu="Smart Action (Strike/Generate/Participate...)" default="True" shortcut="Ctrl+S" execute="defaultAction" />
+		<cardaction menu="Use card ability" default="False" shortcut="Ctrl+Q" execute="useAbility" />
+      <cardaction menu="Ignore Card Trigger" default="False" shortcut="Ctrl+Z" execute="ignoreTrigger" />
+		<cardaction menu="Commit to the Force" shortcut="Ctrl+F" execute="commit" />
+		<groupaction menu="Attack Target Objective" default="False" shortcut="Ctrl+A" execute="engageTarget" />
+      <cardactions menu="Manual Card Actions">
+         <cardaction menu="Strike" default="False" execute="strike" />
+         <cardaction menu="Participate in current engagement" default="False" execute="participate" />
+         <cardaction menu="Clear Participation" default="False" execute="clearParticipation" />
+         <cardaction menu="Generate Resources" default="False" execute="generate" />
+         <cardaction menu="Complete Payment" default="False" execute="purchaseCard" />
+         <cardaction menu="Clear commitment to the force" default="False" execute="clearCommit" />
+         <cardaction menu="Rescue" default="False" execute="rescue" />
+         <cardaction menu="Clear of captured card variables" default="False" execute="clearCaptures" />
+         <cardaction menu="Cancel Paid Ability" default="False" execute="cancelPaidAbility" />
+         <cardaction menu="Flip Card Face Up" default="False" shortcut="Ctrl+Alt+F" execute="flipCard" />
+      </cardactions>
+		<groupactions menu="Manual Targeted Actions">
+         <groupaction menu="Capture Target" default="False" shortcut="Ctrl+C" execute="capture" />
+         <groupaction menu="Rescue Targets" default="False" shortcut="Ctrl+R" execute="rescueTargets" />
+		</groupactions>
+		<groupaction menu="Resolve Force Struggle" default="False" shortcut="Ctrl+F6" execute="resolveForceStruggle" />
+      <groupaction menu="Manually Grab The Edge" default="False" shortcut="Alt+E" execute="gainEdge" />
+		<groupaction menu="Reveal Edge Cards/Resolve Edge Battle" default="False" shortcut="Ctrl+Shift+E" execute="revealEdge" />
+      <groupactions menu="Announcements">
+         <groupaction menu="OK" default="False" execute="BUTTON_OK"  shortcut="Ctrl+1"/>
+         <groupaction menu="Wait!" default="False" execute="BUTTON_Wait" shortcut="Ctrl+2"/>
+         <groupaction menu="Actions?" default="False" execute="BUTTON_Actions" shortcut="Ctrl+3"/>
+         <groupaction menu="Pass." default="False" execute="declarePass" shortcut="Ctrl+Space"/>
+      </groupactions>
+		<groupaction menu="Move to Next phase." default="False" shortcut="Ctrl+Enter" execute="nextPhase" />
+		<groupactions menu="Phases...">
+			<groupaction menu="Jump to Balance Phase." default="False" shortcut="F1" execute="goToBalance" />
+			<groupaction menu="Jump to Refresh Phase." default="False" shortcut="F2" execute="goToRefresh" />
+			<groupaction menu="Jump to Draw Phase." default="False" shortcut="F3" execute="goToDraw" />
+			<groupaction menu="Jump to Deployment Phase." default="False" shortcut="F4" execute="goToDeployment" />
+			<groupaction menu="Jump to Conflict Phase." default="False" shortcut="F5" execute="goToConflict" />
+			<groupaction menu="Jump to Force Phase." default="False" shortcut="F6" execute="goToForce" />
+			<groupaction menu="Finish an Engagement." default="False" shortcut="F10" execute="finishEngagement" />
+      </groupactions>
+      <cardactions menu="Markers...">
+         <cardaction menu="Add Damage counter" default="False" shortcut="Alt+D" execute="addDamage" />
+         <cardaction menu="Add Focus counter" default="False" shortcut="Alt+F" execute="addFocus" />
+         <cardaction menu="Add Shield counter" default="False" shortcut="Alt+S" execute="addShield" />
+         <cardaction menu="Add Markers" default="False" shortcut="Alt+M" batchExecute="addCustomMarker" />
+         <cardaction menu="Remove Damage counter" default="False" shortcut="Alt+Shift+D" execute="subDamage" />
+         <cardaction menu="Remove Focus counter" default="False" shortcut="Alt+Shift+F" execute="subFocus" />
+         <cardaction menu="Remove Shield counter" default="False" shortcut="Alt+Shift+S" execute="subShield" />
+      </cardactions>
+      <groupactions menu="Markers (Targeted)...">
+         <cardaction menu="Damage" default="False" shortcut="Alt+D" execute="addDamageTarget" />
+         <cardaction menu="Focus" default="False" shortcut="Alt+F" execute="addFocusTarget" />
+         <cardaction menu="Shield" default="False" shortcut="Alt+S" execute="addShieldTarget" />
+         <cardaction menu="Remove Damage" default="False" shortcut="Alt+Shift+D" execute="subDamageTarget" />
+         <cardaction menu="Remove Focus" default="False" shortcut="Alt+Shift+F" execute="subFocusTarget" />
+         <cardaction menu="Remove Shield" default="False" shortcut="Alt+Shift+S" execute="subShieldTarget" />
+      </groupactions>
+      <groupactions menu="Timing Structures References">
+         <groupaction menu="Balance Phase" default="False" execute="HELP_BalancePhase" />
+         <groupaction menu="Refresh Phase" default="False" execute="HELP_RefreshPhase" />
+         <groupaction menu="Draw Phase" default="False" execute="HELP_DrawPhase" />
+         <groupaction menu="Deployment Phase" default="False" execute="HELP_DeploymentPhase" />
+         <groupaction menu="Conflict Phase" default="False" execute="HELP_ConflictPhase" />
+         <groupaction menu="Force Phase" default="False" execute="HELP_ForcePhase" />
+      </groupactions>
+      <cardaction menu="Inspect" default="False" shortcut="Ctrl+I" execute="inspectCard" />
+      <groupaction menu="Inspect" default="False" shortcut="Ctrl+I" execute="inspectTargetCard" />
+		<cardaction menu="Send to bottom of deck (random order)" default="False" shortcut="Ctrl+B" batchExecute="sendToBottom" />
+		<cardaction menu="Discard Card/Thwart Objective" default="False" shortcut="Del" execute="discard" />
+		<groupaction menu="Destroy Target Card/Objective" default="False" shortcut="Del" execute="discardTarget" />
+      <!-- <cardaction menu="Show Card Position" default="False" shortcut="Ctrl+Shift+X" execute="ShowPosC" /> -->
+	</table>
+	<player summary="Hand: {#Hand} / DS Dial: {#Death Star Dial} / Victory Pile {#Objectives Destroyed}">
+      <globalvariable name="Side" value="" /> 
+      <globalvariable name="specialCards" value="{}" /> 
+      <globalvariable name="currentObjectives" value="[]" /> 
+      <globalvariable name="gameVersion" value="" /> 
+      <globalvariable name="Pods" value="" /> 
+      <globalvariable name="freePositions" value="[]" /> 
+      <globalvariable name="PLnumber" value="" /> 
+      <globalvariable name="MPxOffset" value="0" /> 
+      <globalvariable name="MPyOffset" value="0" /> 
+      <globalvariable name="myAllies" value="[]" /> 
+      <globalvariable name="Switches" value="{'Placement': True, 'Triggers': True, 'WinForms': True, 'HARDCORE': False, 'Play': True, 'Start/End-of-Turn/Phase': True}" />
+    <group name="Hand" visibility="me" ordered="False" icon="Groups/hand.png" viewState="expanded" >
+			<cardaction menu="Play Card" default="True" execute="play" />
+			<cardaction menu="Place as Edge Card" default="False" shortcut="Ctrl+E" execute="playEdge" />
+			<cardaction menu="Place in Common Reserve" default="False" shortcut="Ctrl+R" execute="placeReserve" />
+			<groupaction menu="Mulligan" default="False" execute="mulligan" />
+			<groupaction menu="Refill Hand" default="False" shortcut="Ctrl+Shift+R" execute="refillHand" />
+			<groupaction menu="Random Discard" default="False" execute="handRandomDiscard" />
+         <groupaction menu="Show a Card at Random" default="False" execute="showatrandom"/>
+         <cardaction menu="Inspect" default="False" shortcut="Ctrl+I" execute="inspectCard" />
+         <cardaction menu="Discard/Remove 4th Objective" default="False" shortcut="Del" execute="handDiscard" />           
+         <cardaction menu="Send to bottom of deck (random order)" default="False" shortcut="Ctrl+B" batchExecute="sendToBottom" />
+		</group>
+		<group name="Command Deck" visibility="none" ordered="False" icon="Groups/library.png" collapsed="False">
+			<groupaction menu="Draw" default="True" shortcut="Ctrl+D" execute="drawCommand" />
+			<groupaction menu="Refill Hand" default="False" shortcut="Ctrl+Shift+R" execute="refillHand" />
+			<groupaction menu="Draw X..." default="False" shortcut="Ctrl+X" execute="drawMany" />
+			<groupaction menu="Draw from Bottom" default="False" shortcut="Ctrl+Alt+D" execute="drawBottom" />
+			<groupaction menu="Shuffle" default="False" execute="shuffle" />
+			<cardaction menu="Take card to hand" default="True" execute="drawCommandCard" />
+		</group>
+		<group name="Objective Deck" visibility="none" ordered="False" icon="Groups/sideboard.png" collapsed="False">
+			<groupaction menu="Draw and Play" default="True" shortcut="Ctrl+O" execute="drawObjective" />
+			<groupaction menu="Shuffle" default="False" execute="shuffle" />
+			<cardaction menu="Play Objective" default="True" execute="playObjectiveCard" />
+      </group>
+		<group name="Discard Pile" visibility="all" ordered="False" icon="Groups/graveyard.png" collapsed="False" />
+		<group name="Victory Pile" visibility="all" ordered="False" icon="Counters/DSOb.png" collapsed="True" />
+		<group name="Common Reserve" visibility="me" ordered="False" icon="Counters/Common_Reserve.png" collapsed="True">
+			<groupaction menu="Play Card" default="True" shortcut="Ctrl+Alt+P" execute="playReserve" />
+			<groupaction menu="Place Edge Card" default="False" shortcut="Ctrl+Alt+E" execute="playEdgeReserve" />
+      </group>
+		<group name="Removed from Game" visibility="all" ordered="False" shortcut="F8" icon="Groups/removed.png" collapsed="True" />
+		<group name="ScriptingPile" visibility="me" ordered="False" shortcut="F8" icon="Groups/scripting.png" collapsed="True" />
+      <counter name="Reserves" default="6" reset="True" icon="Counters/Reserves.png" />
+		<counter name="Death Star Dial" default="0" reset="True" icon="Counters/Death_Star_Dial.png" />
+		<counter name="Objectives Destroyed" default="0" reset="True" icon="Counters/DSOb.png" />
+	</player>
+	<deck>
+		<section name="Affiliation" group="Hand" />     
+		<section name="Command Deck" group="Command Deck" />
+		<section name="Objective Deck" group="Objective Deck" />
+	</deck>
+</game>
